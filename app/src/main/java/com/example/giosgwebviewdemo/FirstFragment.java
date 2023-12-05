@@ -37,6 +37,7 @@ public class FirstFragment extends Fragment {
 
 
         webView =(WebView)view.findViewById(R.id.firstWebview);
+        webView.getSettings().setDomStorageEnabled(true);
         webView.getSettings().setJavaScriptEnabled(true);
         webView.getSettings().setAllowContentAccess(true);
         webView.getSettings().setAllowFileAccessFromFileURLs(true);
@@ -54,7 +55,7 @@ public class FirstFragment extends Fragment {
             while ((line = r.readLine()) != null) {
                 total.append(line).append("\n");
             }
-            webView.loadDataWithBaseURL(null, total.toString(), "text/html", "UTF-8", null);
+            webView.loadDataWithBaseURL("https://a6c07c69-5158-42fc-a8fb-e13cdc1bef38.iactivity.net", total.toString(), "text/html", "UTF-8", null);
         } catch (Exception e) {
             e.printStackTrace();
         }
